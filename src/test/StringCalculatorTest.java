@@ -43,5 +43,12 @@ class StringCalculatorTest {
 		assertEquals(1012, StringCalculator.add("12,999,0,1"));
 		assertEquals(42, StringCalculator.add("0,0,4,5,6,7,8,9,3"));
 	}
+	
+	@Test
+	void testAddWithMultipleInputAndMoreDigitNumbersAndNewLineString() {
+		assertEquals(218, StringCalculator.add("52\n 8,94,3,55\n 6"));
+		assertEquals(1012, StringCalculator.add("12,999\n0,1"));
+		assertEquals(42, StringCalculator.add("0,0,4,5\n 6,7 \n 8,9,3"));
+	}
 
 }

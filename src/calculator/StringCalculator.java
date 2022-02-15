@@ -31,13 +31,14 @@ public class StringCalculator {
 			}else {
 				
 				if(s.length() > 1) {
-					String[] nums = s.split(",");
+					String[] nums = s.split("[\n,]+");
 					
 					// checks if string is valid.
 					boolean isValid = true;
 					
 					for(String number : nums) {
-						if( !isNumber(number) ) {
+						// used trim method to remove spaces.
+						if( !isNumber(number.trim()) ) {
 							isValid = false;
 							break;
 						}
@@ -47,7 +48,7 @@ public class StringCalculator {
 						int sum = 0;
 						
 						for(String number : nums) {
-							sum += convertToNumber(number);
+							sum += convertToNumber(number.trim());
 						}
 						return sum;   
 					}

@@ -35,7 +35,26 @@ public class StringCalculator {
 			}else {
 				
 				if(s.length() > 1) {
-					String[] nums = s.split("[\n,]+");
+					// default delimiter is comma
+					String regex = ",";
+					
+					if(s.startsWith("//")) {
+						String[] parts = s.split("\n", 2);
+						regex = "";
+						regex = parts[0].substring(2);
+						s = parts[1];
+					}
+					
+					// adding new line delimiter to regex.
+					regex += "\n";
+					regex = "[" + regex + "]" + "+";
+					
+					
+					String[] nums = s.split(regex);
+					
+					/*
+					 * for(String number : nums) { System.out.println(number); }
+					 */
 					
 					// checks if string is valid.
 					boolean isValid = true;

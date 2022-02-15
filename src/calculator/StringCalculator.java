@@ -2,7 +2,7 @@ package calculator;
 
 public class StringCalculator {
 	
-	
+	// whether the string can be converted into number or not
 	public static boolean isNumber(String s) {
 		 for (int i = 0; i < s.length(); i++) {
 	            if (Character.isDigit(
@@ -16,9 +16,11 @@ public class StringCalculator {
 		 return true;
 	}
 	
+	// conerts the string to number.
 	public static int convertToNumber(String s) {
 		return Integer.parseInt(s);
 	}
+	
 	
 	public static int add(String s) {
 		if(s.length() == 0) {
@@ -31,10 +33,23 @@ public class StringCalculator {
 				if(s.length() > 1) {
 					String[] nums = s.split(",");
 					
+					// checks if string is valid.
+					boolean isValid = true;
 					
+					for(String number : nums) {
+						if( !isNumber(number) ) {
+							isValid = false;
+							break;
+						}
+					}
 					
-					if(isNumber(nums[0]) && isNumber(nums[1])) {
-						return convertToNumber(nums[0]) + convertToNumber(nums[1]);
+					if(isValid) {
+						int sum = 0;
+						
+						for(String number : nums) {
+							sum += convertToNumber(number);
+						}
+						return sum;   
 					}
 					
 				}

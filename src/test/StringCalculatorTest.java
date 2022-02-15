@@ -20,8 +20,8 @@ class StringCalculatorTest {
 	
 	@Test
 	void testAddWithTwoInputsString() {
-		assertEquals(13, StringCalculator.add("5,8"));
-		assertEquals(10, StringCalculator.add("1,9"));
+		assertEquals(1402, StringCalculator.add("554,848"));
+		assertEquals(93, StringCalculator.add("1,92"));
 		assertEquals(0, StringCalculator.add("0,0"));
 	}
 	
@@ -35,6 +35,13 @@ class StringCalculatorTest {
 		assertEquals(-1, StringCalculator.add(".,8"));
 		assertEquals(-1, StringCalculator.add("1,."));
 		assertEquals(-1, StringCalculator.add("',k"));
+	}
+	
+	@Test
+	void testAddWithMultipleInputAndMoreDigitNumbersString() {
+		assertEquals(218, StringCalculator.add("52,8,94,3,55,6"));
+		assertEquals(1012, StringCalculator.add("12,999,0,1"));
+		assertEquals(42, StringCalculator.add("0,0,4,5,6,7,8,9,3"));
 	}
 
 }

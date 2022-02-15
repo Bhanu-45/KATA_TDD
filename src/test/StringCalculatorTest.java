@@ -59,5 +59,15 @@ class StringCalculatorTest {
 		assertEquals(42, StringCalculator.add("//@.\n0@.0@.4@.5\n 6@.7 \n 8@.9@.3"));
 		assertEquals(-1, StringCalculator.add("//@\n1, \n " ));
 	}
+	
+	@Test
+	void testAddWithMultipleInputAndMoreDigitNumbersAndDefaultDelimiterAndExceptNegativesString() {
+		
+		try {
+			StringCalculator.add("-1,-2,3");
+		} catch(RuntimeException ex) {
+			assertEquals("negatives not allowed:[-1, -2]", ex.getMessage());
+		}
+	}
 
 }

@@ -49,6 +49,7 @@ class StringCalculatorTest {
 		assertEquals(218, StringCalculator.add("52\n 8,94,3,55\n 6"));
 		assertEquals(1012, StringCalculator.add("12,999\n0,1"));
 		assertEquals(42, StringCalculator.add("0,0,4,5\n 6,7 \n 8,9,3"));
+		assertEquals(-1, StringCalculator.add("1, \n " ));
 	}
 
 }

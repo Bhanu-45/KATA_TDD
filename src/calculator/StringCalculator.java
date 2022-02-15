@@ -4,6 +4,10 @@ public class StringCalculator {
 	
 	// whether the string can be converted into number or not
 	public static boolean isNumber(String s) {
+		
+		if(s.length() == 0) {
+			return false;
+		}
 		 for (int i = 0; i < s.length(); i++) {
 	            if (Character.isDigit(
 	                    s.charAt(i))
